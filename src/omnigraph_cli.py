@@ -672,5 +672,10 @@ def main(argv: list[str]) -> int:
     return fn(args)
 
 
+def console_main() -> int:
+    """Entry point for the pip-installed `omnigraph` console script."""
+    return main(sys.argv[1:])
+
+
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))

@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "informed-vibe-omnigraph"
+version = "0.0.1"
+description = "Compile a 3-layer brain (global / personal / project) from your past AI-tool conversations. The writer side of the Informed Vibe Atelier brain contract."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Amit Shukla", email = "amitshukla2308@gmail.com" }]
+requires-python = ">=3.10"
+keywords = ["ai", "agents", "brain", "context", "claude", "gemini", "founders", "informedvibe", "atelier"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "networkx>=3.0",
+    "PyYAML>=6.0",
+    "json-repair>=0.25",
+    "python-louvain>=0.16",
+    "cairosvg>=2.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/Amitshukla2308/omnigraph"
+Repository = "https://github.com/Amitshukla2308/omnigraph"
+Issues = "https://github.com/Amitshukla2308/omnigraph/issues"
+"Atelier integration" = "https://github.com/Amitshukla2308/informed-vibe-atelier-prod/blob/main/docs/BRAIN_INTEGRATION.md"
+
+[project.scripts]
+omnigraph = "omnigraph_cli:console_main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = [
+    "build_events_stream",
+    "build_vault",
+    "canonical_slugs",
+    "canonicalize_canvas",
+    "compile_cli",
+    "gpu_lock",
+    "migrate",
+    "omnigraph_cli",
+    "paths",
+    "phase4_scale",
+    "qwen_pipeline",
+    "reflect",
+    "reliability",
+    "rule_classifier",
+    "stage2_aggregate",
+    "temporal",
+    "vault_enrich",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["compiler*", "domain_brain*", "hr*", "hr_adapter*", "lenses*", "sources*", "viz*"]
