@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Personal data — must NEVER ship in OSS
+vault/
+pilot/
+meta_profiles/
+brain_state*.json
+brain_map_real*.png
+brain_map_personal*.png
+brain_map_sanitized*.png
+brain_map_real*.svg
+*-conversation.md
+*-conversations.md
+amit-*
+
+# Dotfiles / OS
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+
+# Editor
+.vscode/
+.idea/
+.qwen/
+
+# Marker
+.OSS_PUBLIC
